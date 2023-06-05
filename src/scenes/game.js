@@ -1,70 +1,70 @@
 // startup
-let phaserGame;
-window.addEventListener("load", () => {
-    if (phaserGame == null) {
-        phaserGame = new PhaserGame();
-        phaserGame.init();
-    }
-});
+// let phaserGame;
+// window.addEventListener("load", () => {
+//     if (phaserGame == null) {
+//         phaserGame = new PhaserGame();
+//         phaserGame.init();
+//     }
+// });
 
-class PhaserGame {
-    init() {
-        let config = {
-            type: Phaser.AUTO,
-            scale: {
-                mode: Phaser.Scale.FIT,
-                autoCenter: Phaser.Scale.CENTER_BOTH
-            },
-            width: 1920,
-            height: 1080,
-            scene: MenuScene,
-            physics: {
-                default: 'arcade',
-                arcade: {
-                    debug: false
-                }
-            },
-        };
+// class PhaserGame {
+//     init() {
+//         let config = {
+//             type: Phaser.AUTO,
+//             scale: {
+//                 mode: Phaser.Scale.FIT,
+//                 autoCenter: Phaser.Scale.CENTER_BOTH
+//             },
+//             width: 1920,
+//             height: 1080,
+//             scene: MenuScene,
+//             physics: {
+//                 default: 'arcade',
+//                 arcade: {
+//                     debug: false
+//                 }
+//             },
+//         };
 
-        this.game = new Phaser.Game(config);
+//         this.game = new Phaser.Game(config);
         
-    }
-}
+//     }
+// }
 
 /**
- * First Scene: html games require user to focus the window (click or key down) before playing audio so we do this
+ * Menu
  */
-class MenuScene extends Phaser.Scene{
-    constructor() {
-        super("menuScene");
-    }
-    create() {
-        this.text1 = this.add.text(
-            1920 / 2,
-            460,
-            "Final Game",
-            { fontFamily: "arial", color: "gold", fontSize: "100px" }
-        );
-        this.text1.setOrigin(0.5, 0.5);
+// class MenuScene extends Phaser.Scene{
+//     constructor() {
+//         super("menuScene");
+//     }
+//     create() {
+//         this.text1 = this.add.text(
+//             1920 / 2,
+//             460,
+//             "Final Game",
+//             { fontFamily: "arial", color: "gold", fontSize: "100px" }
+//         );
+//         this.text1.setOrigin(0.5, 0.5);
 
-        this.text2 = this.add.text(
-            1920 / 2,
-            700,
-            "Press the SPACE BAR to start",
-            { fontFamily: "arial",color: "gold", fontSize: "100px" }
-        );
-        this.text2.setOrigin(0.5, 0.5);
-    }
+//         this.text2 = this.add.text(
+//             1920 / 2,
+//             700,
+//             "Press the SPACE BAR to start",
+//             { fontFamily: "arial",color: "gold", fontSize: "100px" }
+//         );
+//         this.text2.setOrigin(0.5, 0.5);
+//     }
 
-    update() {
-        if (isKeyPressed("Space")) {
-            this.scene.add("main", MainScene);
-            this.scene.start("main");
-        }
-    }
-}
+//     update() {
+//         if (isKeyPressed("Space")) {
+//             this.scene.add("rhythm1", rhythm1Scene);
+//             this.scene.start("rhythm1");
+//         }
+//     }
+// }
 
-class MainScene {
+class rhythm1Scene {
     preload() {
         this.load.audio("song", "assets/off to see the wizard.mp3");
     }
@@ -98,8 +98,7 @@ class MainScene {
 
         // set the start time of the game
         this.startTime = Date.now();
-        // let keyESC;
-        // keyESC = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
+ 
     }
 
     update() {
