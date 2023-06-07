@@ -6,7 +6,7 @@ class MenuScene extends Phaser.Scene{
         this.text1 = this.add.text(
             1920 / 2,
             460,
-            "Final Game",
+            "Wizard of Oz Rhythm Game",
             { fontFamily: "arial", color: "gold", fontSize: "100px" }
         );
         this.text1.setOrigin(0.5, 0.5);

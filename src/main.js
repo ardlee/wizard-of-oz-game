@@ -1,3 +1,18 @@
+/**
+ * Arthur Lee
+ * Wizard of Oz Rhythm Game
+ * 
+ * Phaser Components:
+ * *Camera
+ * *Tween
+ * *Physics
+ * *Time
+ * *Text Objects
+ * 
+ */ 
+
+
+
 // let phaserGame;
 // window.addEventListener("load", () => {
 //     if (phaserGame == null) {
