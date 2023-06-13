@@ -13,16 +13,24 @@ class CreditsScene {
         this.text2 = this.add.text(
             1920/2,
             800,
-            "Sheet music for the songs were used as a reference for note placement"
+            "Sheet music for the songs were used as a reference for note placement",
+            { fontFamily: "arial", color: "white", fontSize: "40px" }
+        )
+        this.text2.setOrigin(0.5, 0.5);
+
+        this.text3 = this.add.text(
+            1400,
+            1000,
+            "Press 'Esc' to go back",
+            { fontFamily: "arial", color: "white", fontSize: "20px" }
         )
         this.text2.setOrigin(0.5, 0.5);
 
     }
 
     update() {
-        if (isKeyPressed("Space")) {
-            this.scene.add("rhythm1", rhythm1Scene);
-            this.scene.start("rhythm1");
+        if (isKeyPressed("Escape")) {
+            this.scene.start("menuScene");
         }
     }
 }

@@ -1,72 +1,8 @@
-// startup
-// let phaserGame;
-// window.addEventListener("load", () => {
-//     if (phaserGame == null) {
-//         phaserGame = new PhaserGame();
-//         phaserGame.init();
-//     }
-// });
 
-// class PhaserGame {
-//     init() {
-//         let config = {
-//             type: Phaser.AUTO,
-//             scale: {
-//                 mode: Phaser.Scale.FIT,
-//                 autoCenter: Phaser.Scale.CENTER_BOTH
-//             },
-//             width: 1920,
-//             height: 1080,
-//             scene: MenuScene,
-//             physics: {
-//                 default: 'arcade',
-//                 arcade: {
-//                     debug: false
-//                 }
-//             },
-//         };
-
-//         this.game = new Phaser.Game(config);
-        
-//     }
-// }
-
-/**
- * Menu
- */
-// class MenuScene extends Phaser.Scene{
-//     constructor() {
-//         super("menuScene");
-//     }
-//     create() {
-//         this.text1 = this.add.text(
-//             1920 / 2,
-//             460,
-//             "Final Game",
-//             { fontFamily: "arial", color: "gold", fontSize: "100px" }
-//         );
-//         this.text1.setOrigin(0.5, 0.5);
-
-//         this.text2 = this.add.text(
-//             1920 / 2,
-//             700,
-//             "Press the SPACE BAR to start",
-//             { fontFamily: "arial",color: "gold", fontSize: "100px" }
-//         );
-//         this.text2.setOrigin(0.5, 0.5);
-//     }
-
-//     update() {
-//         if (isKeyPressed("Space")) {
-//             this.scene.add("rhythm1", rhythm1Scene);
-//             this.scene.start("rhythm1");
-//         }
-//     }
-// }
 
 class rhythm1Scene {
     preload() {
-        this.load.audio("song", "assets/off to see the wizard.mp3");
+        this.load.audio("song1", "assets/off to see the wizard.mp3");
     }
 
     create() {
@@ -81,7 +17,7 @@ class rhythm1Scene {
         this.score = 0;         // score, needs no explanation
         /*--------------*/
 
-        // this is the red bar at the bottom. Does nothing, just for info
+        // this is the bar at the bottom
         this.noteBar = this.add.rectangle(1920 / 2, 1000, 1920, 10, 0xFFD700);
 
         // The score text
@@ -92,7 +28,7 @@ class rhythm1Scene {
         this.helpText.setOrigin(0.5, 0.5);
 
         // audio object 
-        this.song = this.sound.add("song");
+        this.song = this.sound.add("song1");
         this.song.volume = 3;
         this.song.play();
 
@@ -110,10 +46,12 @@ class rhythm1Scene {
 
     returnMenu() {
         if (isKeyPressed("Escape")) {
+            // this.scene.stop('rythmOne');
             this.scene.start('menuScene');
             this.song.stop(); 
         }
     }
+
 
     spawnNotes() {
         // lets look up to the 15 next notes and spawn if needed
