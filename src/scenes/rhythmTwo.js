@@ -22,7 +22,7 @@ class rhythm2Scene {
         this.scoreText = this.add.text(100, 100, "SCORE", { fontFamily: "arial", fontSize: "100px" });
 
         // Help text under the red bar
-        this.helpText = this.add.text(1920 / 2, 1050, "Press SPACEBAR when yellow dots are on the green line", { fontFamily: "arial", fontSize: "50px" });
+        this.helpText = this.add.text(1920 / 2, 1050, "Press SPACEBAR when red dots are on the green line", { fontFamily: "arial", fontSize: "50px" });
         this.helpText.setOrigin(0.5, 0.5);
 
         // audio object 

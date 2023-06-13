@@ -16,7 +16,7 @@ class rhythm3Scene {
         /*--------------*/
 
         // this is thebar at the bottom
-        this.noteBar = this.add.rectangle(1920 / 2, 1000, 1920, 10, 0x00FF00);
+        this.noteBar = this.add.rectangle(1920 / 2, 1000, 1920, 10, 0xFF0000);
 
         // The score text
         this.scoreText = this.add.text(100, 100, "SCORE", { fontFamily: "arial", fontSize: "100px" });
