@@ -1,1 +1,1 @@
-ardlee.io/wizard-of-oz-game
+httpp://ardlee.io/wizard-of-oz-game
