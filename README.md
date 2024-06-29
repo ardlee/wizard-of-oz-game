@@ -1,1 +1,1 @@
-https://ardlee.github.io/Slug-Dungeon/ 
+https://ardlee.github.io/wizard-of-oz-game/
